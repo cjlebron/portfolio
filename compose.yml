@@ -6,11 +6,10 @@ services:
     ports:
       - "8080:80"
     volumes:
-      - ./profile_pic_lower_res.jpeg:/usr/share/nginx/html/profile_pic_lower_res.jpeg:ro
-      - ./index.html:/usr/share/nginx/html/index.html:ro
-      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./src/profile_pic_lower_res.jpeg:/usr/share/nginx/html/profile_pic_lower_res.jpeg:ro
+      - ./src/index.html:/usr/share/nginx/html/index.html:ro
+      - ./src/nginx.conf:/etc/nginx/conf.d/default.conf:ro
     restart: unless-stopped
     environment:
       - NGINX_HOST=localhost
       - NGINX_PORT=80
-
